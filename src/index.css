@@ -1,3 +1,23 @@
+:root {
+    font-family: 'Poppins', sans-serif;
+    @apply bg-slate-900 text-white;
+}
+body{
+    @apply text-lg;
+}
+*::-webkit-scrollbar{
+    width: .7em;
+}
+*::-webkit-scrollbar-thumb{
+    @apply bg-purple-500 border-2 border-solid border-purple-700 rounded-md;
+}
+*::selection{
+    @apply bg-white text-purple-800;
+}
+*::-moz-selection{
+    @apply bg-white text-purple-800;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,4 +30,5 @@
     .__col {
         @apply relative w-full px-4;
     }
+
 }
