@@ -1,14 +1,17 @@
+import { useState } from 'react'
+
 import Header from './components/Header'
 
 function App() {
+  const [presupuesto, setPresupuesto] = useState(0)
 
   return (
     <>
-      <Header />
-      <div className='container py-6 md:py-8'>
+      <Header presupuesto={presupuesto} setPresupuesto={setPresupuesto} />
+      <div className='container py-6 md:py-8 mt-10 md:mt-8'>
         <div className='__row'>
-          <div className='__col'>
-            <h1 className='font-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ad quod illum unde at dolorem id quisquam laudantium tempore accusantium quia sit distinctio, possimus minima?</h1>
+          <div className='__col text-center'>
+            <h1 className='font-normal text-slate-800'>Developed by jgezziel</h1>
           </div>
         </div>
       </div>

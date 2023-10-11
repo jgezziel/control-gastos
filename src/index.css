@@ -26,9 +26,31 @@ body{
     .__row {
         @apply flex flex-wrap -mx-4;
     }
-
     .__col {
         @apply relative w-full px-4;
     }
-
+    .__alert{
+        @apply px-4 sm:px-6 py-2 border-l-4;
+    }
+    .__alert p{
+        @apply text-sm sm:text-lg;
+    }
+    .__alert-error{
+        @apply border-red-500 bg-red-50;
+    }
+    .__alert-error p{
+        @apply text-red-600;
+    }
+    .__alert-success{
+        @apply border-green-500 bg-green-50;
+    }
+    .__alert-success p{
+        @apply text-green-600;
+    }
+    .__alert-warning{
+        @apply border-yellow-500 bg-yellow-50;
+    }
+    .__alert-warning p{
+        @apply text-yellow-600;
+    }
 }
