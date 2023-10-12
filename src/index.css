@@ -53,4 +53,13 @@ body{
     .__alert-warning p{
         @apply text-yellow-600;
     }
+    .__651-card{
+        @apply bg-white shadow-md shadow-slate-600 rounded-md -mb-[75px];
+    }
+    .__651-card-body{
+        @apply p-6 md:p-10;
+    }
+    .__651-ico{
+        @apply max-w-[85px] cursor-pointer hover:scale-125 transition-transform ease-out duration-300;
+    }
 }

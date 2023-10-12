@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import  Mensaje from './Mensaje'
 
-const NuevoPresupuesto = ({presupuesto, setPresupuesto}) => {
+const NuevoPresupuesto = ({presupuesto, setPresupuesto, setIsValidPresupuesto}) => {
 
   const [mensaje, setMensaje] = useState('')
 
@@ -12,12 +12,12 @@ const NuevoPresupuesto = ({presupuesto, setPresupuesto}) => {
       return
     }
     setMensaje('')
-
+    setIsValidPresupuesto(true)
   }
 
   return (
-    <div className='bg-white shadow-md shadow-slate-600 rounded-md -mb-[75px]'>
-      <div className='p-6 md:p-10'>
+    <div className='__651-card'>
+      <div className='__651-card-body'>
         <form onSubmit={handlePresupuesto}>
           <div className='relative pt-7'>
             <label className='block text-2xl font-semibold text-purple-800 -mt-6 mb-2 text-center'>Definir Presupuesto</label>
