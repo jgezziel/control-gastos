@@ -62,4 +62,22 @@ body{
     .__651-ico{
         @apply max-w-[85px] cursor-pointer hover:scale-125 transition-transform ease-out duration-300;
     }
+    .__label{
+        @apply block text-2xl font-semibold text-purple-800 -mt-6 mb-2;
+    }
+    .__input{
+        @apply w-full rounded border border-slate-300 px-2 py-3 md:text-3xl font-bold text-black hover:border-purple-500 focus:outline-none focus:border-purple-700 focus:ring-1 focus:ring-purple-700 placeholder:text-slate-300;
+    }
+    .__btn{
+        @apply bg-purple-600 px-6 py-3 w-full rounded-md shadow-md shadow-purple-600/50 cursor-pointer hover:bg-purple-700 hover:shadow-purple-700/50 transition-colors;
+    }
+    .__form{
+        @apply opacity-0 transition-all duration-300;
+    }
+    .__form-open{
+        @apply opacity-100;
+    }
+    .__form-close{
+        @apply opacity-0;
+    }
 }

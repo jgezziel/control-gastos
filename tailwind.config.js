@@ -40,6 +40,9 @@ export default {
 	safelist: [
 		{
 			pattern: /__alert-(success|warning|error)/
+		},
+		{
+			pattern: /__form-(open|close)/
 		}
 	]
 }

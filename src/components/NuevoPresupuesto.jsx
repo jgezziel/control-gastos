@@ -20,13 +20,13 @@ const NuevoPresupuesto = ({presupuesto, setPresupuesto, setIsValidPresupuesto}) 
       <div className='__651-card-body'>
         <form onSubmit={handlePresupuesto}>
           <div className='relative pt-7'>
-            <label className='block text-2xl font-semibold text-purple-800 -mt-6 mb-2 text-center'>Definir Presupuesto</label>
-            <input className='w-full rounded border border-slate-300 px-2 py-3 md:text-3xl font-bold text-black text-center hover:border-purple-500 focus:outline-none focus:border-purple-700 focus:ring-1 focus:ring-purple-700 placeholder:text-slate-300'
+            <label className='__label text-center'>Definir Presupuesto</label>
+            <input className='__input text-center'
             type='number' placeholder='Añade tu presupuesto' min='0' value={presupuesto} onChange={e=>setPresupuesto(Number(e.target.value))}/>
           </div>
-          <div className='relative pt-7'>
-            <input className='bg-purple-600 px-6 py-3 w-full rounded-md shadow-md shadow-purple-600/50 cursor-pointer hover:bg-purple-700 hover:shadow-purple-700/50 transition-colors'
-            type='submit' value='añadir'/>
+          <div className='relative pt-7 mb-4'>
+            <input className='__btn'
+            type='submit' value='Añadir'/>
           </div>
           {mensaje && <Mensaje tipo="error">{mensaje}</Mensaje> }
         </form>
