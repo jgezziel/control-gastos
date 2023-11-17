@@ -36,7 +36,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className={modal && 'overflow-hidden h-screen'}>
       <Header presupuesto={presupuesto} setPresupuesto={setPresupuesto} isValidPresupuesto={isValidPresupuesto} setIsValidPresupuesto={setIsValidPresupuesto} />
       <div className='container py-6 md:py-8 mt-10 md:mt-8'>
         <div className='__row'>
@@ -50,13 +50,13 @@ function App() {
           <main>
             <ListadoGastos gastos={gastos}/>
           </main>
-          <div className='absolute right-6 bottom-[calc(100%/2)] __651-ico'>
+          <div className='fixed right-6 bottom-[calc(100%/2)] __651-ico'>
             <img title='Añadir Gasto' className='w-full' src={IconoNuevoGasto} alt='Icono Nuevo Gasto' onClick={handleNuevoGasto}/>
           </div>
         </>
       )}
       {modal && <Modal setModal={setModal} animarModal={animarModal} setAnimarModal={setAnimarModal} guardarGasto={guardarGasto}/>}
-    </>
+    </div>
   )
 }
 

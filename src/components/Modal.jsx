@@ -64,10 +64,10 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
                       <option value=''>Selecciona una opción</option>
                       <option value='alimentacion'>Alimentación</option>
                       <option value='diversion'>Diversion</option>
-                      <option value='hogar'>Hogar</option>  
-                      <option value='transporte'>Transporte</option>
-                      <option value='salud'>Salud</option>
+                      <option value='hogar'>Hogar</option>
                       <option value='otros'>Otros</option>
+                      <option value='salud'>Salud</option>
+                      <option value='suscripciones'>Suscripciones</option>
                     </select>
                   </div>
                   <div className='relative pt-7 mb-4'>
