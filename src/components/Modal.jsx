@@ -1,18 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Mensaje from './Mensaje'
 import CloseButton from '../assets/ico-close.svg'
 
-const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
+const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto, gastoEditar,setGastoEditar }) => {
 
   const [mensaje, setMensaje] = useState('')
 
   const [nombre, setNombre] = useState('')
   const [cantidad, setCantidad] = useState('')
   const [categoria, setCategoria] = useState('')
+  const [fecha, setFecha] = useState('')
+  const [id, setId] = useState('')
+
+
+  useEffect(() => {
+    if( Object.keys(gastoEditar).length > 0 ){
+      setNombre(gastoEditar.nombre)
+      setCantidad(gastoEditar.cantidad)
+      setCategoria(gastoEditar.categoria)
+      setId(gastoEditar.id)
+      setFecha(gastoEditar.fecha)
+    }
+  }, [])
+
 
   const ocultarModal = () => {
     setAnimarModal(false)
-
+    setGastoEditar({})
     setTimeout(() => {
       setModal(false)
     }, 500)
@@ -29,7 +43,7 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
       return
     }
 
-    guardarGasto({nombre,cantidad,categoria})
+    guardarGasto({nombre,cantidad,categoria, id, fecha})
     
   }
 
@@ -48,7 +62,7 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
             <div className={`__651-card text-black __form __form-${animarModal ?  'open': 'close'}`}>
               <div className='__651-card-body'>
                 <form onSubmit={handleSubmit}>
-                  <legend className="text-3xl font-semibold text-slate-900 text-center pb-3 mb-3 border-b">Nuevo Gasto</legend>
+                  <legend className="text-3xl font-semibold text-slate-900 text-center pb-3 mb-3 border-b">{gastoEditar.nombre ? 'Editar Gasto' : 'Nuevo Gasto'}</legend>
                   {mensaje && <Mensaje tipo="error">{mensaje}</Mensaje> }
                   <div className='relative pt-7 mb-4'>
                     <label className='__label' htmlFor='nombre'>Nombre del gasto</label>
@@ -71,7 +85,7 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
                     </select>
                   </div>
                   <div className='relative pt-7 mb-4'>
-                    <input className='__btn text-white' type='submit' value='Añadir Gasto'/>
+                    <input className='__btn text-white' type='submit' value={gastoEditar.nombre ? 'Guardar cambios' : 'Añadir gasto'}/>
                   </div>
                 </form>
               </div>
