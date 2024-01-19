@@ -1,0 +1,108 @@
+:root {
+    font-family: 'Poppins', sans-serif;
+    @apply bg-slate-900 text-white;
+}
+body{
+    @apply text-lg;
+}
+*::-webkit-scrollbar{
+    width: .7em;
+}
+*::-webkit-scrollbar-thumb{
+    @apply bg-purple-500 border-2 border-solid border-purple-700 rounded-md;
+}
+*::selection{
+    @apply bg-white text-purple-800;
+}
+*::-moz-selection{
+    @apply bg-white text-purple-800;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .__row {
+        @apply flex flex-wrap -mx-4;
+    }
+    .__col {
+        @apply relative w-full px-4;
+    }
+    .__alert{
+        @apply px-4 sm:px-6 py-2 border-l-4;
+    }
+    .__alert p{
+        @apply text-sm sm:text-lg;
+    }
+    .__alert-error{
+        @apply border-red-500 bg-red-50;
+    }
+    .__alert-error p{
+        @apply text-red-600;
+    }
+    .__alert-success{
+        @apply border-green-500 bg-green-50;
+    }
+    .__alert-success p{
+        @apply text-green-600;
+    }
+    .__alert-warning{
+        @apply border-yellow-500 bg-yellow-50;
+    }
+    .__alert-warning p{
+        @apply text-yellow-600;
+    }
+    .__651-card{
+        @apply bg-white shadow-md shadow-slate-600 rounded-md -mb-[75px];
+    }
+    .__651-card-body{
+        @apply p-6 md:p-10;
+    }
+    .__651-ico{
+        @apply max-w-[85px] cursor-pointer hover:scale-125 transition-transform ease-out duration-300;
+        filter:    drop-shadow(0px 0px 6px #757575) ;        
+        -webkit-filter:    drop-shadow(0px 0px 6px #757575) ;
+    }
+    .__label{
+        @apply block text-2xl font-semibold text-purple-800 -mt-6 mb-2;
+    }
+    .__input{
+        @apply w-full rounded border border-slate-300 px-2 py-3 md:text-3xl font-bold text-black hover:border-purple-500 focus:outline-none focus:border-purple-700 focus:ring-1 focus:ring-purple-700 placeholder:text-slate-300;
+    }
+    .__btn{
+        @apply bg-purple-600 px-6 py-3 w-full rounded-md shadow-md shadow-purple-600/50 cursor-pointer hover:bg-purple-700 hover:shadow-purple-700/50 transition-colors;
+    }
+    .__form{
+        @apply opacity-0 transition-all duration-300;
+    }
+    .__form-open{
+        @apply opacity-100;
+    }
+    .__form-close{
+        @apply opacity-0;
+    }
+    .__btn-reset{
+        @apply bg-red-500 px-6 py-3 w-full rounded-md shadow-md shadow-red-500/50 cursor-pointer hover:bg-red-600 hover:shadow-red-600/50 transition-colors;
+    }
+}
+.swipe-action{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: right;
+}
+.swipeable-list{
+    flex: none;
+}
+.swipeable-list-item__content{
+    display: block;
+}
+.swipe-action__leading{
+    background-color: #2a94b8;
+    color: #fff;
+}
+.swipe-action__trailing{
+    background-color: #f44336;
+    color: #fff;
+}
